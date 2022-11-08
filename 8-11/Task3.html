@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Task 3</title>
+    <style>
+        /* #txt{
+            text-decoration: underline;
+        } */
+    </style>
+</head>
+<body>
+
+    <select onchange="myFunction()" id="con">
+      <option value="Xanh Mono">Xanh Mono</option>
+      <option value="Island Moments">Island Moments</option>
+      <option value="Roboto Mono">Roboto Mono</option>
+    </select>
+
+    <select onchange="myFunction1()" id="size">
+        <option value="16" >16</option>
+        <option value="20">20</option>
+        <option value="24">24</option>
+        <option value="28">28</option>
+        <option value="36">36</option>
+    </select>
+<br><br>
+<form id="width">
+    <input onchange="myFunction1()" type="checkbox" id="vehicle1" name="vehicle1" value="italic">
+    <label for="vehicle1">italic</label><br>
+    <input onchange="myFunction2()" type="checkbox" id="vehicle2" name="vehicle2" value="bold">
+    <label for="vehicle2"> bold</label><br>
+    <input onchange="myFunction3()" type="checkbox" id="vehicle3" name="vehicle3" value="underline">
+    <label for="vehicle3">underline</label><br><br>
+</form>
+      <!--   <input type="radio" id="italic" name="width" value="italic">
+        <label for="italic">italic</label><br>
+        <input type="radio" id="bold" name="width" value="bold">
+        <label for="bold">bold</label><br>
+        <input type="radio" id="undrline" name="width" value="undrline">
+        <label for="undrline">undrline</label> -->
+    <br><br><br><br>
+    <div id="txt" style=" border: 2px solid black; width: 300px; height: 80px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, accusantium.</div>
+    <!-- ///////////////// -->
+    <script>
+        function myFunction() {
+            var txt = document.getElementById("txt");
+var x = document.getElementById("con").value;
+    if(x=="Xa,nh Mono"){
+        txt.style.fontFamily="'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif";
+    }
+    else if (x=="Island Moments"){
+        txt.style.fontFamily="Trebuchet MS"
+    }
+    else if (x=="Roboto Mono"){
+        txt.style.fontFamily="Gill Sans MT"
+    }
+}
+function myFunction1(){
+var size = document.getElementById("size").value;
+var txt =document.getElementById("txt");
+
+if(size=="16"){
+    txt.style.fontSize="16px";
+    txt.style.width="300px";
+    txt.style.height="100px";
+}
+else if (size=="20"){
+    txt.style.fontSize="20px";
+}
+else if (size=="24"){
+    txt.style.fontSize="24px";
+}
+else if (size=="28"){
+    txt.style.fontSize="28px";
+    txt.style.width="400px";
+    txt.style.height="150px";
+}
+}
+//////
+
+function myFunction2(){ var txt=document.getElementById("txt");
+    var y=document.getElementById("vehicle2").value;
+    if(y=="bold"){
+        txt.style.fontWeight="900";
+    }
+    // else {(y!="bold")
+    //     txt.style.fontWeight="300";
+    // }}
+}
+
+    function myFunction3(){
+        var txt=document.getElementById("txt");
+    var y=document.getElementById("vehicle3").value;
+    if(y=="underline"){
+        txt.style.textDecoration=" underline";
+    }
+    }
+    </script>
+</body>
+</html>
