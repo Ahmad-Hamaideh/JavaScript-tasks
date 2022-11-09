@@ -5,18 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 4</title>
+    <style>
+        div{
+            border: 4px solid black;
+            width: 1000px;
+            height: 300px;
+            margin: 50px;
+            padding: 50px;
+            background-color: aquamarine;
+        }
+    </style>
 </head>
 <body>
-<label for="pas1">password</label>
+    <div >
+        
+<label for="pas1">password(main 6 characters) : </label>
 <input onchange="pas1()" name="pas1" id="pas1"  type="password"  /> <p id="per1"></p>
-<label for="pas2">repeat</label>
-<input onchange="pas2()" type="password" for="pas2" id="pas2"> <p id="per2"></p>
-<button id="bot"  style="display: none;" type="submit">button</button>
-
+<label for="pas2">Repeat password :</label>
+<input style="margin-left: 75px;" onchange="pas2()" type="password" for="pas2" id="pas2"> <p id="per2"></p>
+<button  style="margin: 30px; display:none; width: 70px;" id="bot"  style="display: none;" type="submit">button</button>
+    </div>
 <script>
 function pas1() {
     let password = document.getElementById("pas1").value;
-
     if (password.length < 6){
         document.getElementById('per1').style.color="red";
         document.getElementById('per1').innerHTML="Too short";
@@ -29,9 +40,9 @@ function pas1() {
   }
 
 function pas2(){
-    let re=document.getElementById("pas2").value;
-    let passwordd = document.getElementById("pas1").value;
-    if (re != passwordd){
+    let rep=document.getElementById("pas2").value;
+    let password = document.getElementById("pas1").value;
+    if (rep != password){
         document.getElementById('per2').style.color="red";
         document.getElementById("per2").innerHTML="the two passwords don't match"
     }

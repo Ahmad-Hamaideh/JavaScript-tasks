@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Task 3</title>
     <style>
-        /* #txt{
-            text-decoration: underline;
-        } */
+     
     </style>
 </head>
 <body>
@@ -28,19 +26,14 @@
     </select>
 <br><br>
 <form id="width">
-    <input onchange="myFunction1()" type="checkbox" id="vehicle1" name="vehicle1" value="italic">
+    <input onchange="myFunction11()" type="checkbox" id="vehicle1" name="vehicle1" value="italic">
     <label for="vehicle1">italic</label><br>
     <input onchange="myFunction2()" type="checkbox" id="vehicle2" name="vehicle2" value="bold">
     <label for="vehicle2"> bold</label><br>
     <input onchange="myFunction3()" type="checkbox" id="vehicle3" name="vehicle3" value="underline">
     <label for="vehicle3">underline</label><br><br>
 </form>
-      <!--   <input type="radio" id="italic" name="width" value="italic">
-        <label for="italic">italic</label><br>
-        <input type="radio" id="bold" name="width" value="bold">
-        <label for="bold">bold</label><br>
-        <input type="radio" id="undrline" name="width" value="undrline">
-        <label for="undrline">undrline</label> -->
+     
     <br><br><br><br>
     <div id="txt" style=" border: 2px solid black; width: 300px; height: 80px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, accusantium.</div>
     <!-- ///////////////// -->
@@ -80,7 +73,11 @@ else if (size=="28"){
 }
 }
 //////
-
+function myFunction11(){ var txt=document.getElementById("txt");
+    var y=document.getElementById("vehicle1").value;
+    if(y=="italic"){
+        txt.style.fontStyle=" italic";
+    }}
 function myFunction2(){ var txt=document.getElementById("txt");
     var y=document.getElementById("vehicle2").value;
     if(y=="bold"){

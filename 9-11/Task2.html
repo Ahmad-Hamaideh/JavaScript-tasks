@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+</head>
+<body>
+
+    <form>
+        <fieldset>
+          <legend> Details</legend>
+
+    <p>
+            <label>My Subject : </label><input type="text" title="firstname" id="firstname" />
+          </p>
+ 
+  
+  
+          <p>
+            <label>
+                Brief Description about my project
+              <br />
+              <textarea id="brief" cols="30" rows="3"></textarea>
+          
+          </p>
+          <p>Select your User Types  :</p>
+          <label for="c11"> <input  type="checkbox" name="tech" value="admins" id="c11">admins</label>
+          <label for="c22"><input type="checkbox" name="tech" value="logged in" id="c22"> logged in</label>
+          <label for="c33"><input  type="checkbox" name="tech" value="costumers" id="c33">costumers</label>
+          <label for="c44"><input  type="checkbox" name="tech" value="reguler" id="c44">reguler</label>
+          <br>
+          <p>Select your Technologies  :</p>
+          <label for="c1"> <input  type="checkbox" name="lang" value="css" id="c1">Front End</label>
+          <label for="c2"><input type="checkbox" name="lang" value="html" id="c2"> Back End</label>
+          <label for="c3"><input  type="checkbox" name="lang" value="js" id="c3">js</label>
+          <label for="c4"><input  type="checkbox" name="lang" value="c#" id="c4">c#</label>
+          
+
+          <br><br><br>
+         
+          <p> 
+            <button style="display:inline-block ;" id="submitbtn" onclick="moka1()" type="button">Submit</button>
+            <button style="display:inline-block ;" id="showme" onclick="moka2()"  type="button"> my card </button>
+          </p>
+
+        </fieldset>
+      </form>
+      <div id="mydiv">
+        <p id="firstnamecard"></p>
+        <p id="briefcard"></p>
+        <p id="youragecard"></p>
+       
+        <p id="landue"></p>
+       
+    
+
+      </div>
+      <script>
+     
+       
+           
+
+       function moka1(){
+        let checkboxes = document.querySelectorAll('input[name="lang"]:checked');
+        let values = [];
+checkboxes.forEach((checkbox) => {
+    values.push(checkbox.value);
+    sessionStorage.setItem('lang',values);
+                    });
+
+                    let checkboxes2 = document.querySelectorAll('input[name="tech"]:checked');
+        let values2 = [];
+checkboxes2.forEach((checkbox) => {
+    values2.push(checkbox.value);
+    sessionStorage.setItem('tech',values2);
+                    });
+
+        var firstname =document.getElementById("firstname").value;
+       
+        var brief =document.getElementById("brief").value;
+       
+           
+        sessionStorage.setItem('firstname',firstname);
+      
+        sessionStorage.setItem('brief',brief);
+     
+
+     
+    }
+
+
+    function moka2(){
+        document.getElementById("firstnamecard").innerHTML="My Project about "+ sessionStorage.getItem("firstname");
+        document.getElementById("youragecard").innerHTML="My  User Types   are "+ sessionStorage.getItem("tech");
+       
+
+        document.getElementById("landue").innerHTML="My Prefferd Technologies are "+ sessionStorage.getItem("lang");
+        document.getElementById("briefcard").innerHTML= sessionStorage.getItem("brief");
+    }
+        </script>
+        </body>
+        </html>
