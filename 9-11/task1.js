@@ -42,7 +42,7 @@ var boxes = document.getElementsByName('ok');
 bt.onclick=function(){
     localStorage.setItem("major",loc.value )
     localStorage.setItem("ffname",fffname.value)
-    localStorage.setItem("Iname",age.value)
+    localStorage.setItem("name2",age.value)
     localStorage.setItem("brf",br.value)
 let boxx;
 let gn = document.getElementsByName('gen');
@@ -69,7 +69,7 @@ for(let i = 0; i <= gn.length; i++) {
 
 function myfn(){
 document.getElementById("firstnamecard").innerHTML="My Name Is "+localStorage.getItem("ffname");
-document.getElementById("youragecard").innerHTML="Im"+localStorage.getItem("lname")+"Years Old";
+document.getElementById("youragecard").innerHTML="Im"+localStorage.getItem("name2")+"Years Old";
 document.getElementById("major").innerHTML="Im a "+localStorage.getItem("gen");
 document.getElementById("landue").innerHTML="My Prefferd Languages are "+localStorage.getItem("ok");
 document.getElementById("briefcard").innerHTML= localStorage.getItem("brf");

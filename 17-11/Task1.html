@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1 </title>
+</head>
+<body>
+    <label for="cars">Choose a :</label>
+    <select id="slec" onchange="clic()">
+      <option id="name"  value=""></option>
+    </select><br><br>
+    <img src="" id="imge">
+
+    <script>
+
+  async function git() {
+    let x =  await fetch ("https://www.breakingbadapi.com/api/characters");  
+          console.log(x)
+          const y = await x.json();
+          console.log(y)
+        //   document.getElementById("name").innerHTML= y[i].name;
+        //   document.getElementById("imge").src=y[0].img;
+for(let i=0 ; i<y.length ;i++){
+    let c =y[i]
+    document.getElementById("slec").innerHTML +=  "<Option>"+ y[i].name +"</Option>" +"br";
+    // document.getElementById("imge").src=
+    // ///////////
+    let q= document.getElementById("slec").innerHTML +=  "<Option>"+ y[i].name +"</Option>" +"br";
+    let g = document.getElementById (`<img src='${c.img} '>`+ "<br>");
+    if(g==q){
+   
+    }
+    //     document.writeln( `<img src='${c.img} '>`+ "<br>");
+} 
+
+
+
+}
+git();
+
+ async function clic(){
+    let x =  await fetch ("https://www.breakingbadapi.com/api/characters");  
+          console.log(x)
+          const y = await x.json();
+    let select = document.getElementById('slec');
+        let value2 = select.options[select.selectedIndex].value;
+        console.log(value2)
+
+        for(i=0; i<y.length ; i++){
+if(value2==y[i].name){
+    document.getElementById("imge").src=y[i].img;
+}
+
+        }
+    // document.writeln( `<img src='${c.img} '>`+ "<br>" );
+
+}
+        </script>
+</body>
+</html>
